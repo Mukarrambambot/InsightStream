@@ -7,32 +7,21 @@ export const GeneralContext = React.createContext();
 const GeneralContextProvider = ({children}) => {
 
     const [topNews, setTopNews] = useState([])
-    const [topHeadlines, setHeadlines] = useState([])
+
     const [businessNews, setBusinessNews] = useState([]);
     const [technologyNews, setTechnologyNews] = useState([]);
     const [politicsNews, setPoliticsNews] = useState([]);
-    
-    const newKey =  "6f813cf12de84ce99402864c27976d57"
+
     useEffect(() => { 
-        fetchHeadlines()
         fetchTopNews() 
         fetchBusinessNews()
         fetchPoliticsNews()
         fetchTechnologyNews()
       }, [])
     
-     const fetchHeadlines = async () => {
-        try {
-          const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${newKey}`);
-          setHeadlines(response.data.articles);
-        } catch (error) {
-          console.error(error);
-        }
-      }
-      
       const fetchTopNews = async () => {
         try {
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=popular&apiKey=${newKey}`);
+          const response = await axios.get("https://newsapi.org/v2/everything?q=popular&apiKey=d75b6a3b79ef4bc3abe884257cb580f8");
           setTopNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -41,7 +30,7 @@ const GeneralContextProvider = ({children}) => {
 
       const fetchBusinessNews = async () => {
         try {
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=business&apiKey=${newKey}`);
+          const response = await axios.get("https://newsapi.org/v2/everything?q=business&apiKey=d75b6a3b79ef4bc3abe884257cb580f8");
           setBusinessNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -49,7 +38,7 @@ const GeneralContextProvider = ({children}) => {
       }
       const fetchPoliticsNews = async () => {
         try {
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=politics&apiKey=${newKey}`);
+          const response = await axios.get("https://newsapi.org/v2/everything?q=politics&apiKey=d75b6a3b79ef4bc3abe884257cb580f8");
           setPoliticsNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -57,7 +46,7 @@ const GeneralContextProvider = ({children}) => {
       }
       const fetchTechnologyNews = async () => {
         try {
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=technology&apiKey=${newKey}`);
+          const response = await axios.get("https://newsapi.org/v2/everything?q=technology&apiKey=d75b6a3b79ef4bc3abe884257cb580f8");
           setTechnologyNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -66,7 +55,7 @@ const GeneralContextProvider = ({children}) => {
 
     
   return (
-    <GeneralContext.Provider value={{topHeadlines, topNews, businessNews, technologyNews, politicsNews}} >{children}</GeneralContext.Provider>
+    <GeneralContext.Provider value={{topNews, businessNews, technologyNews, politicsNews}} >{children}</GeneralContext.Provider>
   )
 }
 

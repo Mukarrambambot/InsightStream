@@ -10,13 +10,6 @@ const NavbarComponent = () => {
 
     const navigate = useNavigate();
 
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      });
-
     const [search, setSearch] = useState('');
 
     const handleSearch = () =>{
@@ -28,29 +21,23 @@ const NavbarComponent = () => {
 
   return (
 
-<div className="navbar">
-  <div className="navbar__logo">
-  <h6>{formattedDate} e-Paper</h6>
-  </div>
-
-  <div className="navbar__title">
-    <h1 onClick={()=> {setActive("Home"); navigate("/")}}>Headlines <span>Now</span></h1>
-  </div>
-
-  <div className="navbar__links">
-          <p className={active === 'Home' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("Home"); navigate("/")}} >Home</p>
-                <p className={active === 'General' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("General"); navigate("/category/general")}}>General</p>
-                <p className={active === 'Technology' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("Technology"); navigate("/category/technology")}}>Technology</p>
-                <p className={active === 'Politics' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("Politics"); navigate('/category/politics')}}>Politics</p>
-                <p className={active === 'Health' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("Health"); navigate("/category/health")}}>Health</p>
-                <p className={active === 'Art & Culture' ? 'active navbar__link' : 'navbar__link'} onClick={()=> {setActive("Art & Culture"); navigate("/category/art&culture")}}>Art & Culture</p>
-  </div>
-
-  <div className="navbar__search">
-    <input className='search-input' type="text" placeholder="Search" onChange={(e)=> setSearch(e.target.value)} value={search} />
-     <IoSearch className='search-icon' onClick={()=> handleSearch()} />
-  </div>
-</div>
+        <div className='navbar'>
+            <div className='navbar__logo'>
+                <h2  onClick={()=> {setActive("Home"); navigate("/")}} >SB News</h2>
+            </div>
+            <div className='navbar__links'>
+                <p className={active === 'Home' ? 'active' : ''} onClick={()=> {setActive("Home"); navigate("/")}} >Home</p>
+                <p className={active === 'General' ? 'active' : ''} onClick={()=> {setActive("General"); navigate("/category/general")}}>General</p>
+                <p className={active === 'Technology' ? 'active' : ''} onClick={()=> {setActive("Technology"); navigate("/category/technology")}}>Technology</p>
+                <p className={active === 'Politics' ? 'active' : ''} onClick={()=> {setActive("Politics"); navigate('/category/politics')}}>Politics</p>
+                <p className={active === 'Health' ? 'active' : ''} onClick={()=> {setActive("Health"); navigate("/category/health")}}>Health</p>
+                <p className={active === 'Art & Culture' ? 'active' : ''} onClick={()=> {setActive("Art & Culture"); navigate("/category/art&culture")}}>Art & Culture</p>
+            </div>
+            <div className="navbar__search">
+                <input className='search-input' type="text" placeholder="Search" onChange={(e)=> setSearch(e.target.value)} value={search} />
+                <IoSearch className='search-icon' onClick={()=> handleSearch()} />
+            </div>
+        </div>
 
   )
 }

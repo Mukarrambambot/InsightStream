@@ -1,14 +1,11 @@
 .Hero-container{
-    padding: 4vh 0;
-    padding-bottom: 4vh;
-}
 
-.Hero-container h3{
-     color: white;
-    padding: 10px;
-    background: linear-gradient(to right, black, white);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3vh;
+    margin: 0 2vw;
 }
-
 
 .hero-article-1{
     cursor: pointer;
@@ -16,9 +13,9 @@
 }
 
 .hero-article-1 img{
-    width: 25vw;
+    width: 45vw;
     border-radius: 0.3rem;
-    height: 40vh;
+    height: 60vh;
 
 }
 
@@ -33,7 +30,7 @@
     margin: 0;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-   
+    width: 45vw;
 }
 
 .hero-article-2{
@@ -65,53 +62,4 @@
 
 .hero-article-small p{
     font-size: 0.9rem;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr; /* First column spans twice as much space */
-    gap: 20px; /* Space between grid items */
-    height: fit-content;
-}
-
-.large-item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
-
-.large-item:hover{
-    cursor: pointer;
-    transform: scale(1.090);
-    transition: 0.5s ease-in-out;
-}
-
-.large-item img {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* Adjust for large image height */
-}
-
-.medium-item {
-    background-color: #f9f9f9;
-    padding: 15px;
-    text-align: center;
-}
-
-.medium-item img {
-    width: 100%;
-    height: auto;
-    max-height: 250px; /* Adjust for medium image height */
-}
-.medium-item :hover{
-    cursor: pointer;
-    transform: scale(1.090);
-    transition: 0.5s ease-in-out;
-}
-
-
-.text {
-    font-size: 14px;
-    color: #333;
-    margin-top: 10px;
 }

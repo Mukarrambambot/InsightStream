@@ -22,7 +22,7 @@ const TopStories = () => {
       <div className="top-stories">
 
             {topNews.map((article, index) => {
-                return  (
+                return index > 5 && index < 16 && (
                     <div className="top-story" key={index} onClick={()=> window.open(article.url, '_blank')} >
                         <img src={article.urlToImage} alt="placeholder" />
                         <p>{article.title.slice(0,40)}...</p>

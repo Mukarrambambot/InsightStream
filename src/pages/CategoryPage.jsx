@@ -19,7 +19,7 @@ const CategoryPage = () => {
     
       const fetchNews = async (id) => {
         try {
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=${id}&apiKey=6f813cf12de84ce99402864c27976d57`);
+          const response = await axios.get(`https://newsapi.org/v2/everything?q=${id}&apiKey=d75b6a3b79ef4bc3abe884257cb580f8`);
           setCategoryNews(response.data.articles);
         } catch (error) {
           console.error(error);
