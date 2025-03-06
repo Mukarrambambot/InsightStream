@@ -1,0 +1,105 @@
+.navbar {
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  align-items: center; /* Center align items horizontally */
+  justify-content: flex-start;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+ background: whitesmoke;
+  z-index: 1000;
+  padding: 0px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Logo styling */
+.navbar__logo {
+  position: absolute;
+  left: 20px; /* Position the logo on the left */
+  top: 20px; /* Space from the top */
+}
+
+.navbar__logo img {
+  max-width: 150px; /* Adjust the logo size */
+  height: auto;
+}
+
+/* Title styling */
+.navbar__title {
+  text-align: center;
+  margin-top: 20px; /* Space below the logo */
+}
+
+.navbar__title h1 {
+  color: black;
+  font-size: 56px;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+      background: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 11px 0px 11px 11px;
+    background: black;
+    /* border: 26px; */
+    border-radius: 21px;
+}
+
+.navbar__title h1 span{
+    background: red;
+    padding: 12px;
+    width: 112px;
+    border-radius: 10px;
+}
+
+/* Links styling */
+.navbar__links {
+  display: flex;
+  justify-content: flex-start; /* Align links to the left */
+  width: 100%;
+  margin-top: 10px; /* Space between title and links */
+  background-color: black;
+
+}
+
+.navbar__link {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 0px 0px 2px;
+  transition: color 0.3s ease;
+  margin-left: 50px;
+}
+
+.navbar__link:hover {
+  color: red; /* Hover color for the links */
+  cursor: pointer;
+}
+
+.navbar__links .active{
+  color: red;
+    font-weight: 900;
+}
+
+/* Search box styling */
+.navbar__search {
+  position: absolute;
+  right: 20px; /* Position the search box on the right */
+  top: 20px; /* Align with the navbar */
+}
+
+.search-input {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  width: 250px; /* Expand search box on focus */
+  outline: none;
+}
+
