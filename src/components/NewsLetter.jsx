@@ -1,41 +1,59 @@
-import React, { useState } from 'react'
-import '../styles/NewsLetter.css'
+import React, { useState } from "react";
+import "../styles/NewsLetter.css";
 
 const NewsLetter = () => {
-
   const [showA, setShowA] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
-  const [email, setEmail] = useState('');
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-  const hangleSubmit = (e) =>{
-    e.preventDefault()
-    setEmail('')
-    setShowA(true)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setEmail("");
+    setError("");
+    setShowA(true);
     setTimeout(() => {
-      setShowA(false)
+      setShowA(false);
     }, 3000);
-  }
-
-
+  };
 
   return (
-    <div className='newsletter-container'>
-      <h2>Subscribe to the newsletter</h2>
-      <h4>Get a weekly digest of our most important stories direct to your inbox.</h4>
-      
-      <form className='newsletter-form'>
-        <input type='text' placeholder='Enter Your Email' onChange={(e)=> setEmail(e.target.value)} value={email} />
-        <button onClick={hangleSubmit} >Subscribe</button>
+    <div className="newsletter-container">
+      <h2>Subscribe to Our Newsletter</h2>
+      <h4>Get a weekly digest of our top stories straight to your inbox.</h4>
+
+      <form className="newsletter-form">
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+        <button onClick={handleSubmit}>Subscribe</button>
       </form>
-      {showA ?
-        <div className='newsletter-success'>
-          <p>Thank you for subscribing!</p>
+
+      {error && <p className="newsletter-error">{error}</p>}
+
+      {showA && (
+        <div className="newsletter-success">
+          <p>🎉 Thank you for subscribing!</p>
           <p>You will receive a confirmation email shortly.</p>
         </div>
-      :""}
-      <p>Place some disclaimer text here about how subscriber’s email, Privacy Policy and all that.</p>
-    </div>
-  )
-}
+      )}
 
-export default NewsLetter
+      <p className="newsletter-disclaimer">
+        We respect your privacy. Your email is safe with us. Read our{" "}
+        <a href="#">Privacy Policy</a>.
+      </p>
+    </div>
+  );
+};
+
+export default NewsLetter;

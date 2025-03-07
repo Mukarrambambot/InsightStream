@@ -1,65 +1,65 @@
-.Hero-container{
-
+.Hero-container {
     display: grid;
     grid-template-columns: 50% 50%;
     border-bottom: 3px solid #000;
     padding-bottom: 3vh;
     margin: 0 2vw;
-}
-
-.hero-article-1{
+    gap: 20px;
+  }
+  
+  .hero-article-1 {
     cursor: pointer;
-
-}
-
-.hero-article-1 img{
-    width: 45vw;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hero-article-1 img {
+    width: 100%;
     border-radius: 0.3rem;
     height: 60vh;
-
-}
-
-.hero-article-1:hover{
-
-    transform: scale(1.025);
-    transition: 0.5s ease-in-out;
-}
-
-.hero-article-1 h3{
-    font-size: 1.2rem;
-    margin: 0;
+    object-fit: cover;
+  }
+  
+  .hero-article-1:hover {
+    transform: scale(1.05);
+  }
+  
+  .hero-article-1 h3 {
+    font-size: 1.4rem;
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 45vw;
-}
-
-.hero-article-2{
-    display: grid;
-    grid-template-columns: 49% 49%;
-    gap: 2%;
-}
-
-.hero-article-small{
-
     width: 100%;
+  }
+  
+  .hero-article-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .hero-article-small {
     cursor: pointer;
-}
-
-.hero-article-small:hover{
-
-    transform: scale(1.03);
-    transition: 0.5s ease-in-out;
-}
-
-.hero-article-small img{
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hero-article-small:hover {
+    transform: scale(1.08);
+  }
+  
+  .hero-article-small img {
     width: 100%;
     border-radius: 0.3rem;
-}
-
-.hero-article-small img:hover{
-
-}
-
-.hero-article-small p{
-    font-size: 0.9rem;
-}
+    height: 15vh;
+    object-fit: cover;
+  }
+  
+  .hero-article-small p {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .spinners {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  

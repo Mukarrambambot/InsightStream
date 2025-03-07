@@ -1,3 +1,5 @@
+/workspaces/InsightStream/src/components/Footer.jsx
+
 import React from 'react'
 import '../styles/Footer.css'
 import { useNavigate } from 'react-router-dom';

@@ -1,17 +1,34 @@
-.Home{
+/* Main Home Container */
+.Home {
     padding: 15vh 0 0 0;
-
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;
-}
-.Home::-webkit-scrollbar {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* Hide Scrollbar for IE, Edge & Firefox */
+  .Home {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Hide Scrollbar for Chrome, Safari */
+  .Home::-webkit-scrollbar {
     display: none;
   }
-
-.home-components{
-
+  
+  /* Layout for Home Components */
+  .home-components {
     display: grid;
-    grid-template-columns: 23% 70%;
-    gap: 4%;
-}
-
+    grid-template-columns: 25% 70%;
+    gap: 5%;
+    padding: 0 5vw;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .home-components {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+      gap: 20px;
+      padding: 0 3vw;
+    }
+  }
+  
